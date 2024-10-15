@@ -1,6 +1,6 @@
-# double_pages
+# Double Pages
 
-A new Flutter project.
+https://github.com/user-attachments/assets/001eadfb-08ac-4523-91bf-41b901f631ed
 
 ## Getting Started
 

@@ -36,22 +36,39 @@ class _FirstPageState extends State<FirstPage> {
       appBar: AppBar(
         title: const Text("First Page"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const SecondPage()));
+            },
+            icon: Icon(Icons.arrow_forward, size: 40,),
+          )
+        ],
       ),
-      body: Stack(
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: FloatingActionButton(
-                backgroundColor: Colors.blue.shade900,
-                shape: OvalBorder(side: BorderSide.none),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const SecondPage()));
-                },
-                child: Icon(Icons.add),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, 
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 10.0,
+            childAspectRatio: 1.0, 
+          ),
+          itemCount: 4,
+          itemBuilder: (context, index) {
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.blueAccent,
               ),
-            ),
-          ],
+              child: IconButton(
+                onPressed: () { Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const SecondPage())); }, 
+                icon: Icon(Icons.add),
+              ),
+            );
+          },
         ),
+      ),
     );
   }
 }

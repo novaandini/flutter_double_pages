@@ -53,7 +53,7 @@ class SecondPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.yellow,
                   ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
